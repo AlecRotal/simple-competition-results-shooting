@@ -18,13 +18,13 @@ Route::get('/', function () {
 //Auth::routes();
 
 // Authentication Routes...
-$this->get('login', 'Auth\AuthController@showLoginForm');
-$this->post('login', 'Auth\AuthController@login');
-$this->get('logout', 'Auth\AuthController@logout');
+$this->get('login', 'Auth\LoginController@showLoginForm')->name('login') ;
+$this->post('login', 'Auth\LoginController@login');
+$this->post('logout', 'Auth\LoginController@logout')->name('logout');
 
 // Password Reset Routes...
-$this->get('password/reset/{token?}', 'Auth\PasswordController@showResetForm');
-$this->post('password/email', 'Auth\PasswordController@sendResetLinkEmail');
-$this->post('password/reset', 'Auth\PasswordController@reset');
+$this->get('password/reset/{token?}', 'Auth\ForgotPasswordController@showResetForm')->name('password.request');
+$this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
+$this->post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -11,20 +11,20 @@ class RezultatSeeder extends Seeder
      */
     public function run()
     {
-          DB::table('kategorijas')->insert([
+          DB::table('rezultats')->insert([
             'kategorija_id' => 11,
             'disciplina_id' => 3,
             'tekmovalci_id' => 1
           ]);
-          DB::table('kategorijas')->insert([
+          DB::table('rezultats')->insert([
             'kategorija_id' => 11,
             'disciplina_id' => 3,
             'tekmovalci_id' => 2
           ]);
-          DB::table('kategorijas')->insert([
+          DB::table('rezultats')->insert([
             'kategorija_id' => 11,
             'disciplina_id' => 3,
-            'tekmovalci_id' => 3        
+            'tekmovalci_id' => 3
           ]);
 
 
